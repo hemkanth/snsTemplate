@@ -1,0 +1,27 @@
+mat-card{
+    
+}
+mat-card-header {
+    text-align: center;
+}
+mat-card-title > .avatar{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 2%;
+}
+mat-card-actions > a {
+    text-decoration: none;
+     
+}
+mat-card-actions > a > button{
+    width: 100%;
+    height: auto;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5%;
+}
+
+mat-card-actions > a > button.selected {
+    background-color: #4680ff;
+    color: #ffffff;
+}

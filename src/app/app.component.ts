@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'snsTemplate';
+  status: boolean = true;
+
+  clickEvent() {
+    this.status = !this.status;
+  }
 }
