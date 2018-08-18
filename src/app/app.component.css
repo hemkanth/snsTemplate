@@ -84,16 +84,22 @@ form .mat-button {
     transition: 0.5s;
 
 }
+
 #sideNav.hideSideNav > .sideNavContent mat-card-header img {
     width: 60px;
     margin-left: -25px;
     transition: 0.5s;
-
+}
+#sideNav.showSideNav > .sideNavContent mat-card-header img {
+    margin-left: 0px;
+    transition: 0.5s;
 }
 #sideNav.hideSideNav > .sideNavContent button {
     width: 50px;
     transition: 0.5s;
-
+}
+#sideNav.showSideNav > .sideNavContent button {
+    transition: 0.5s;
 }
 /* sideve navigation styel ends */
 
@@ -113,7 +119,7 @@ mat-card-actions > a {
 }
 mat-card-actions > a > button{
     width: 100%;
-    height: auto;
+    height: 10%;
     text-align: left;
     margin-left: 0;
     margin-top: 5%;
