@@ -2,5 +2,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 *{
-    outline: none !important
+    outline: none !important;
+}
+.mat-button {
+    min-width: 20px !important;
+}
+body {
+    background-color: #ececec;
 }

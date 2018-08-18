@@ -17,13 +17,20 @@ img {
 }
 form {
     width: 50%;
+    margin-right: 0%;
 }
+
 form .mat-button {
     min-width: 30px;
     height: 40px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+.iconbutton > button{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 
 /* top navigation bar style ends */
 
@@ -35,14 +42,15 @@ form .mat-button {
     z-index: 1;
     top: auto;
     left: 0;
-    background-color: #ffffff;
+    background-color: #ececec;
     overflow-x: hidden;
+    overflow-y: auto;
     transition: 0.5s;
     /* padding-top: 60px; */
 }
 #sideNav > .sideNavContent {
-    padding: 10px;
-    min-height: 720px;
+    padding: 0px 10px 15px 0px;
+    min-height: 630px;
 }
 #content {
     transition: margin-left 0.5s;
@@ -51,13 +59,68 @@ form .mat-button {
 
 #sideNav.showSideNav {
     width: 250px;
+    transition: 0.5s;
+
 }
 #sideNav.hideSideNav {
-    width: 0;
+    width: 80px;
+    transition: 0.5s;
+
 }
+
 #content.showSideNav {
     margin-left: 250px;
+    transition: 0.5s;
+
 }
 #content.hideSideNav {
-    margin-left: 0;
+    margin-left: 80px;
+    transition: 0.5s;
+
 }
+
+#sideNav.hideSideNav > .sideNavContent mat-card-header span, #sideNav.hideSideNav > .sideNavContent button span{
+    display: none;
+    transition: 0.5s;
+
+}
+#sideNav.hideSideNav > .sideNavContent mat-card-header img {
+    width: 60px;
+    margin-left: -25px;
+    transition: 0.5s;
+
+}
+#sideNav.hideSideNav > .sideNavContent button {
+    width: 50px;
+    transition: 0.5s;
+
+}
+/* sideve navigation styel ends */
+
+/* matcard style */
+
+mat-card-header {
+    text-align: center;
+}
+mat-card-title > .avatar{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 2%;
+}
+mat-card-actions > a {
+    text-decoration: none;
+     
+}
+mat-card-actions > a > button{
+    width: 100%;
+    height: auto;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5%;
+}
+
+mat-card-actions > a > button.selected {
+    background-color: #4680ff;
+    color: #ffffff;
+}
+/* mat-card style ends */
