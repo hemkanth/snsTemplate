@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'snsTemplate';
-  status: boolean = true;
+  status: Boolean = true;
   dashboardButton = true;
   levelsButtom = false;
   achievementsButton = false;
@@ -21,7 +21,7 @@ export class AppComponent {
 
   onClick(whichButton: String) {
     switch (whichButton) {
-      case "dashboard": {
+      case 'dashboard': {
         this.dashboardButton = true;
         this.levelsButtom = false;
         this.achievementsButton = false;
@@ -31,7 +31,7 @@ export class AppComponent {
         this.contactAdminButton = false;
         break;
       }
-      case "levels": {
+      case 'levels': {
         this.dashboardButton = false;
         this.levelsButtom = true;
         this.achievementsButton = false;
@@ -41,7 +41,7 @@ export class AppComponent {
         this.contactAdminButton = false;
         break;
       }
-      case "achievements": {
+      case 'achievements': {
         this.dashboardButton = false;
         this.levelsButtom = false;
         this.achievementsButton = true;
@@ -51,7 +51,7 @@ export class AppComponent {
         this.contactAdminButton = false;
         break;
       }
-      case "badges": {
+      case 'badges': {
         this.dashboardButton = false;
         this.levelsButtom = false;
         this.achievementsButton = false;
@@ -61,7 +61,7 @@ export class AppComponent {
         this.contactAdminButton = false;
         break;
       }
-      case "activities": {
+      case 'activities': {
         this.dashboardButton = false;
         this.levelsButtom = false;
         this.achievementsButton = false;
@@ -71,7 +71,7 @@ export class AppComponent {
         this.contactAdminButton = false;
         break;
       }
-      case "profile": {
+      case 'profile': {
         this.dashboardButton = false;
         this.levelsButtom = false;
         this.achievementsButton = false;
@@ -81,7 +81,7 @@ export class AppComponent {
         this.contactAdminButton = false;
         break;
       }
-      case "contactAdmin": {
+      case 'contactAdmin': {
         this.dashboardButton = false;
         this.levelsButtom = false;
         this.achievementsButton = false;
@@ -93,7 +93,7 @@ export class AppComponent {
       }
 
       default: {
-        console.log("no tab selected");
+        console.log('no tab selected');
 
       }
     }
