@@ -49,12 +49,12 @@ form .mat-button {
     /* padding-top: 60px; */
 }
 #sideNav > .sideNavContent {
-    padding: 0px 10px 15px 0px;
+    /* padding: 0px 10px 15px 0px; */
     min-height: 630px;
 }
 #content {
     transition: margin-left 0.5s;
-    padding: 6px;
+    /* padding: 6px; */
 }
 
 #sideNav.showSideNav {
@@ -63,7 +63,7 @@ form .mat-button {
 
 }
 #sideNav.hideSideNav {
-    width: 80px;
+    width: 75px;
     transition: 0.5s;
 
 }
@@ -74,7 +74,7 @@ form .mat-button {
 
 }
 #content.hideSideNav {
-    margin-left: 80px;
+    margin-left: 75px;
     transition: 0.5s;
 
 }
