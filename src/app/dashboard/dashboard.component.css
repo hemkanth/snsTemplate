@@ -1,7 +1,10 @@
+
 .headerpart {
+    top: 90px;
     width: 100%;
     height: 25%;
     background-color: #4680ff;
+    margin-top: 80px;
     
 }
 .headerpart > h1 {
@@ -28,4 +31,18 @@
 }
 #level_2_widget mat-card-footer {
     background-color: #9ccc65;
+}
+
+#level_3_widget mat-card-title {
+    color: #ff5252;
+}
+#level_3_widget mat-card-footer {
+    background-color: #ff5252;
+}
+
+#level_4_widget mat-card-title {
+    color: #448aff;
+}
+#level_4_widget mat-card-footer {
+    background-color: #448aff;
 }
