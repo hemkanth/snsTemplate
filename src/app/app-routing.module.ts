@@ -33,4 +33,4 @@ export const routingComponents = [
   ActivitiesComponent,
   ProfileComponent,
   ContactAdminComponent
-]
+];

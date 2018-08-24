@@ -2,54 +2,52 @@
 
 <!-- top fixed navigation bar -->
 <nav class="navbar navbar-fixed-top">
-  <div class="container fluid">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <div class="navbar-brand">
-        <a>
-          <img src="../assets/sns_institute_logo.png" alt="sns-logo">
-        </a>
-        <button mat-icon-button (click)="clickEvent()">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+      <a href="" class="navbar-brand">
+        <img src="../assets/sns_institute_logo.png" alt="logo">
+      </a>
+      <button id="menuButton" mat-icon-button (click)="clickEvent()">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-  </div>
+    <div class="iconbuttons">
 
-  <form action="" class="navbar-form navbar-right">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="search..." name="search">
-      <div class="input-group-btn">
-        <button mat-button type="submit">
-          <i class="fas fa-search"></i>
-        </button>
+    <form class="navbar-form" action="">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="search..." name="search">
+        <div class="input-group-btn">
+          <button mat-button type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </form>
-  <div class="iconbutton">
-    <!-- bell notification -->
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <i class="far fa-bell"></i>
-    </button>
-    <!-- dropdown menu -->
-    <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
-      <button mat-menu-item>
-        <span>notification 1</span>
-      </button>
-      <button mat-menu-item>
-        <span>notification 2</span>
-      </button>
-      <button mat-menu-item>
-        <span>notification 3</span>
-      </button>
-    </mat-menu>
 
-    <!-- logout button -->
-    <button mat-icon-button (click)="onClick('logout')" matTooltip="Logout">
-      <i class="fas fa-sign-out-alt"></i>
-    </button>
+    </form>
+      <!-- bell notification -->
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+          <i class="far fa-bell"></i>
+        </button>
+        <!-- dropdown menu -->
+        <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+          <button mat-menu-item>
+            <span>notification 1</span>
+          </button>
+          <button mat-menu-item>
+            <span>notification 2</span>
+          </button>
+          <button mat-menu-item>
+            <span>notification 3</span>
+          </button>
+        </mat-menu>
+  
+        <!-- logout button -->
+        <button mat-icon-button matTooltip="Logout">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+        </div>
   </div>
 </nav>
-
 <!-- side navigation bar -->
 <div id="sideNav" class="sidenav" [ngClass]="status ? 'showSideNav' : 'hideSideNav'">
   <div class="sideNavContent">
@@ -66,44 +64,44 @@
       </mat-card-header>
       <mat-divider></mat-divider>
       <mat-card-actions>
-        <a routerLink="/dashboard">
-          <button mat-button (click)="onClick('dashboard')" [class.selected]="dashboardButton">
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <button mat-button>
             <i class="fas fa-home"></i> &nbsp;&nbsp;
             <span>My Dashboard</span>
           </button>
         </a>
-        <a routerLink="/levels">
-          <button mat-button (click)="onClick('levels')" [class.selected]="levelsButtom">
+        <a routerLink="/levels" routerLinkActive="active">
+          <button mat-button>
             <i class="fas fa-th-list"></i> &nbsp;&nbsp;
             <span>My Levels</span>
           </button>
         </a>
         <a routerLink="/achievements" routerLinkActive="active">
-          <button mat-button (click)="onClick('achievements')" [class.selected]="achievementsButton">
+          <button mat-button>
             <i class="fas fa-trophy"></i> &nbsp;&nbsp;
             <span>My Achievements</span>
           </button>
         </a>
         <a routerLink="/badges" routerLinkActive="active">
-          <button mat-button (click)="onClick('badges')" [class.selected]="badgesButton">
+          <button mat-button>
             <i class="fas fa-award"></i> &nbsp;&nbsp;
             <span>My Badges</span>
           </button>
         </a>
         <a routerLink="/activities" routerLinkActive="active">
-          <button mat-button (click)="onClick('activities')" [class.selected]="activitiesButton">
+          <button mat-button>
             <i class="fas fa-chart-line"></i> &nbsp;&nbsp;
             <span>My Activities</span>
           </button>
         </a>
         <a routerLink="/profile" routerLinkActive="active">
-          <button mat-button (click)="onClick('profile')" [class.selected]="profileButton">
+          <button mat-button>
             <i class="far fa-user"></i> &nbsp;&nbsp;
             <span>My Profile</span>
           </button>
         </a>
         <a routerLink="/contactAdmin" routerLinkActive="active">
-          <button mat-button (click)="onClick('contactAdmin')" [class.selected]="contactAdminButton">
+          <button mat-button>
             <i class="fas fa-headset"></i> &nbsp;&nbsp;
             <span>Contact Admin</span>
           </button>

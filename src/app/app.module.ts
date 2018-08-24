@@ -6,8 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +23,7 @@ import { BadgesComponent } from './badges/badges.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactAdminComponent } from './contact-admin/contact-admin.component';
+import { ActivityModalComponent } from './Modals/activity-modal/activity-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,7 @@ import { ContactAdminComponent } from './contact-admin/contact-admin.component';
     ActivitiesComponent,
     ProfileComponent,
     ContactAdminComponent,
+    ActivityModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +45,14 @@ import { ContactAdminComponent } from './contact-admin/contact-admin.component';
     MatCardModule,
     MatDividerModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule,
+    MatInputModule,
+    ModalModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // entryComponents: []
 })
-export class AppModule { }
+export class AppModule {}
