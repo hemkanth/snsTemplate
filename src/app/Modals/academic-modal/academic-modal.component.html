@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Academic Info Update</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="academicForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput type="text" formControlName="graduate" placeholder="Graduate">
+      <mat-error *ngIf="academicForm.controls['graduate'].errors && !academicForm.controls['graduate'].errors.pristine">
+        <span *ngIf="academicForm.controls['graduate'].errors.required">required</span>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <input matInput type="text" formControlName="percentage" placeholder="Percentage">
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <input matInput type="text" formControlName="y_passing" placeholder="Year of passing">
+    </mat-form-field>
+    <br/>
+    <div class="modal-footer">
+      <button mat-raised-button type="submit"  [disabled]="!academicForm.valid" style="background-color: #4680ff; color: #ffffff">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

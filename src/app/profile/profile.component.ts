@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { ProfileModalComponent } from '../Modals/profile-modal/profile-modal.component';
+import { AcademicModalComponent } from '../Modals/academic-modal/academic-modal.component';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +11,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   //  const bgColorvalue = ;
-  background = 'black';
-  constructor() { }
+  dob = 'xxx';
+  c_number = 'xxx';
+  p_number = 'xxx';
+  address = 'xxx';
+
+  graduate = 'xxx';
+  percentage = 'xxx';
+  y_passing = 'xxx';
+  bsModalRef: BsModalRef;
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
   }
-
+  openProfileUpdateModal() {
+    this.bsModalRef = this.modalService.show(ProfileModalComponent);
+    this.bsModalRef.content.sendData.subscribe(profileForm => {
+      // console.log('profile form value =>' + profileForm);
+      this.dob = profileForm.dob;
+      this.c_number = profileForm.c_number;
+      this.p_number = profileForm.p_number;
+      this.address = profileForm.address;
+    });
+  }
+  openAcademicUpdateModal() {
+    this.bsModalRef = this.modalService.show(AcademicModalComponent);
+    this.bsModalRef.content.sendData.subscribe(academicForm => {
+      this.graduate = academicForm.graduate;
+      this.percentage = academicForm.percentage;
+      this.y_passing = academicForm.y_passing;
+    });
+  }
 }

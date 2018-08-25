@@ -7,52 +7,56 @@
       <a href="" class="navbar-brand">
         <img src="../assets/sns_institute_logo.png" alt="logo">
       </a>
-      <button id="menuButton" mat-icon-button (click)="clickEvent()">
+      <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="!status" then style="display: block">
         <i class="fas fa-bars"></i>
       </button>
     </div>
     <div class="iconbuttons">
 
-    <form class="navbar-form" action="">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="search..." name="search">
-        <div class="input-group-btn">
-          <button mat-button type="submit">
-            <i class="fas fa-search"></i>
-          </button>
+      <form class="navbar-form" action="">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="search..." name="search">
+          <div class="input-group-btn">
+            <button mat-button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </div>
-      </div>
 
-    </form>
+      </form>
       <!-- bell notification -->
       <button mat-icon-button [matMenuTriggerFor]="menu">
-          <i class="far fa-bell"></i>
+        <i class="far fa-bell"></i>
+      </button>
+      <!-- dropdown menu -->
+      <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+        <button mat-menu-item>
+          <span>notification 1</span>
         </button>
-        <!-- dropdown menu -->
-        <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
-          <button mat-menu-item>
-            <span>notification 1</span>
-          </button>
-          <button mat-menu-item>
-            <span>notification 2</span>
-          </button>
-          <button mat-menu-item>
-            <span>notification 3</span>
-          </button>
-        </mat-menu>
-  
-        <!-- logout button -->
-        <button mat-icon-button matTooltip="Logout">
-          <i class="fas fa-sign-out-alt"></i>
+        <button mat-menu-item>
+          <span>notification 2</span>
         </button>
-        </div>
+        <button mat-menu-item>
+          <span>notification 3</span>
+        </button>
+      </mat-menu>
+
+      <!-- logout button -->
+      <button mat-icon-button matTooltip="Logout">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
   </div>
 </nav>
 <!-- side navigation bar -->
 <div id="sideNav" class="sidenav" [ngClass]="status ? 'showSideNav' : 'hideSideNav'">
   <div class="sideNavContent">
     <mat-card>
+
       <mat-card-header>
+        <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="status" then style="display: block">
+          <i class="fas fa-times"></i>
+        </button>
         <mat-card-title>
           <img class="avatar" src="../../assets/avatar.png" alt="avatar">
           <br/>

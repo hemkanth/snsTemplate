@@ -27,6 +27,9 @@ body {
     padding: 5%;
     color: #ffffff;
 }
+.cdk-overlay-container{
+    z-index: 1054;
+}
 
 @media screen and (max-width: 400px) {
     .contentPart {

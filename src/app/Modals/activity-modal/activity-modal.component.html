@@ -1,3 +1,29 @@
-<p>
-  activity-modal works!
-</p>
+<div class="Modal">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add new activity</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="activiytForm">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date"  [(ngModel)]="dateValue">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Activity" [(ngModel)]="activityValue">
+      </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder="Status">
+            <mat-option value="achieved">achieved</mat-option>
+            <mat-option value="participated">participated</mat-option>
+          </mat-select>
+      </mat-form-field>
+      <!-- <input type="text" [(ngModel)]="Value" >
+      <input type="text" [(ngModel)]="ValueOne" > -->
+    </form>
+    <button (click)="add()">add</button>
+  </div>
+</div>

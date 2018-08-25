@@ -16,6 +16,9 @@ export class ActivitiesComponent implements OnInit {
   }
   openModal() {
     this.bsModalRef = this.modalService.show(ActivityModalComponent);
+    this.bsModalRef.content.Add.subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
