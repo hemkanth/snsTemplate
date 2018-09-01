@@ -23,7 +23,8 @@ export class ProfileModalComponent implements OnInit {
         Validators.pattern('[0-9]*'),
         Validators.minLength(10),
         Validators.maxLength(10)]),
-      p_number: new FormControl('', [Validators.required]),
+      p_number: new FormControl('', [Validators.required,
+      Validators.pattern('[0-9]*'), Validators.minLength(10), Validators.maxLength(10)]),
       address: new FormControl('', [Validators.required])
     });
   }

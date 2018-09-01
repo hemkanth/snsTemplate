@@ -18,9 +18,8 @@ export class AcademicModalComponent implements OnInit {
 
     this.academicForm = new FormGroup({
       graduate: new FormControl('', [Validators.required]),
-      percentage: new FormControl('', [Validators.required,
-        Validators.pattern('[0-9]{2,3}[.0-9]{}')]),
-      y_passing: new FormControl('', [Validators.required])
+      percentage: new FormControl('', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(0), Validators.max(100)]),
+      y_passing: new FormControl('', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(2000), Validators.max(2020)]),
     });
   }
   onSubmit() {

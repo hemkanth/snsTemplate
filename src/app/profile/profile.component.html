@@ -1,5 +1,5 @@
 <div class="contentPart">
-  <div class="headerpart">
+  <div class="headerpart_2">
     <h1>My Profile</h1>
   </div>
 
@@ -101,16 +101,16 @@
           </mat-tab>
           <mat-tab label=" Extra Curricular Activities">
             <mat-card>
-              <button mat-raised-button matTooltip="click to update extra curricular activities info">Update</button>
+              <button mat-raised-button matTooltip="click to update extra curricular activities info" (click)="openExtraCAUpdateModal()">Update</button>
               <div class="box mat-elevation-z4">
                 <table class="ExtraCurricularActivitiesInfoTable table table-striped">
                   <tr>
                     <th>Name (Sports)</th>
-                    <td>xxxx</td>
+                    <th>Honors</th>
                   </tr>
                   <tr>
-                    <th>Honors</th>
-                    <td>xxxx</td>
+                    <td>{{sports_name}}</td>
+                    <td>{{honors}}</td>
                   </tr>
                 </table>
               </div>

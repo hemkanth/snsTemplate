@@ -1,116 +1,146 @@
 <div class="contentPart">
-  <div class="headerpart">
+  <div class="headerpart_2">
     <h1>Contact Admin Info</h1>
   </div>
 
   <div class="contentpart">
     <div class="container">
       <mat-card>
-        <!-- <table class="table">
-          <thead>
-           <strong>Enter the details:</strong>
-          </thead>
-          <tbody>
-          <tr>
-            <th>Name:</th>
-            <td>
-              <input type="text" class="form-control" id="Name">
-            </td>
-         
-            <th>Roll Number:</th>
-            <td>
-              <input type="text" class="form-control" id="RollNumber">
-            </td>
-          </tr>
-          <tr>
-            <th>Batch:</th>
-            <td>
-              <input type="text" class="form-control" id="Batch">
-            </td>
-         
-            <th>Department:</th>
-            <td>
-              <input type="text" class="form-control" id="Department">
-            </td>
-          </tr>
-          <tr>
-            <th>Course:</th>
-            <td>
-              <input type="text" class="form-control" id="Course">
-            </td>
-         
-            <th>Tutor:</th>
-            <td>
-              <input type="text" class="form-control" id="Tutor">
-            </td>
-          </tr>
-          <tr>
-            <th>Contact Number:</th>
-            <td>
-              <input type="text" class="form-control" id="ContactNumber">
-            </td>
-         
-            <th>Email id:</th>
-            <td>
-              <input type="text" class="form-control" id="EmailId">
-            </td>
-          </tr>
-        </tbody>
-        </table> -->
-        <form action="">
+        <form [formGroup]="contactAdminForm" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-sm-4">
               <mat-form-field>
-                <input matInput placeholder="Name">
+                <input matInput placeholder="Name" type="text" formControlName="name">
+                <mat-error *ngIf="contactAdminForm.controls['name'].errors && !contactAdminForm.controls['name'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['name'].errors.required">required</span>
+                  <span *ngIf="contactAdminForm.controls['name'].errors.pattern">
+                    incorrect format
+                  </span>
+                </mat-error>
               </mat-form-field>
             </div>
             <div class="col-sm-4">
               <mat-form-field>
-                <input matInput placeholder="Roll number">
+                <input matInput placeholder="Roll number" formControlName="rollNo">
+                <mat-error *ngIf="contactAdminForm.controls['rollNo'].errors && !contactAdminForm.controls['rollNo'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['rollNo'].errors.required">
+                    required
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['rollNo'].errors.pattern">
+                    incorrect format
+                  </span>
+                </mat-error>
               </mat-form-field>
             </div>
             <div class="col-sm-4">
               <mat-form-field>
-                <input matInput placeholder="Batch">
+                <input matInput placeholder="Batch" formControlName="batch">
+                <mat-hint>example: 2013-2016</mat-hint>
+                <mat-error *ngIf="contactAdminForm.controls['batch'].errors && !contactAdminForm.controls['batch'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['batch'].errors.pattern">
+                    invalid batch
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['batch'].errors.required">
+                    required
+                  </span>
+                </mat-error>
               </mat-form-field>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-4">
               <mat-form-field>
-                <input matInput placeholder="Department">
+                <input matInput placeholder="Department" formControlName="department">
+                <mat-error *ngIf="contactAdminForm.controls['department'].errors && !contactAdminForm.controls['department'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['department'].errors.pattern">
+                    invalid department
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['department'].errors.required">
+                    required
+                  </span>
+                </mat-error>
               </mat-form-field>
             </div>
             <div class="col-sm-4">
               <mat-form-field>
-                <input matInput placeholder="Course">
+                <input matInput placeholder="Course" formControlName="course">
+                <mat-error *ngIf="contactAdminForm.controls['course'].errors && !contactAdminForm.controls['course'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['course'].errors.required">
+                    required
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['course'].errors.pattern">
+                      invalid course
+                    </span>
+                </mat-error>
               </mat-form-field>
             </div>
             <div class="col-sm-4">
               <mat-form-field>
-                <input matInput placeholder="Tutor">
+                <input matInput placeholder="Tutor" formControlName="tutor">
+                <mat-error *ngIf="contactAdminForm.controls['tutor'].errors && !contactAdminForm.controls['tutor'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['tutor'].errors.required">
+                    required
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['tutor'].errors.pattern">
+                      invalid name
+                    </span>
+                </mat-error>
               </mat-form-field>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <mat-form-field>
-                <input matInput placeholder="Contact Number">
+                <span matPrefix>+91 &nbsp;</span>
+                <input matInput placeholder="Contact Number" formControlName="c_number">
+                <mat-error *ngIf="contactAdminForm.controls['c_number'].errors && !contactAdminForm.controls['c_number'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['c_number'].errors.required">
+                    required
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['c_number'].errors.pattern">
+                    contact number should be 10 digit number
+                  </span>
+                </mat-error>
               </mat-form-field>
             </div>
             <div class="col-sm-6">
               <mat-form-field>
-                <input matInput placeholder="Email Id	">
+                <input matInput placeholder="Email Id" formControlName="email" type="email">
+                <mat-error *ngIf="contactAdminForm.controls['email'].errors && !contactAdminForm.controls['email'].errors.pristine">
+                  <span *ngIf="contactAdminForm.controls['email'].errors.required">
+                    required
+                  </span>
+                  <span *ngIf="contactAdminForm.controls['email'].errors.pattern">
+                    invalid email
+                  </span>
+                </mat-error>
               </mat-form-field>
             </div>
           </div>
           <mat-form-field>
-            <input matInput placeholder="Subject	">
+            <input matInput placeholder="Subject" formControlName="subject" type="text">
+            <mat-error *ngIf="contactAdminForm.controls['subject'].errors && !contactAdminForm.controls['subject'].errors.pristine">
+              <span *ngIf="contactAdminForm.controls['subject'].errors.required">
+                required
+              </span>
+
+            </mat-error>
           </mat-form-field>
           <mat-form-field>
-            <textarea matInput placeholder="Leave a comment"></textarea>
+            <textarea matInput #message placeholder="Leave a comment" formControlName="query" type="text"></textarea>
+            <mat-hint align="end">{{message.value.length}} / 250</mat-hint>
+            <mat-error *ngIf="contactAdminForm.controls['query'].errors && !contactAdminForm.controls['query'].errors.pristine">
+              <span *ngIf="contactAdminForm.controls['query'].errors.required">
+                required
+              </span>
+              <span *ngIf="contactAdminForm.controls['query'].errors.maxLength">
+                entered more than 250 chartcters
+              </span>
+            </mat-error>
           </mat-form-field>
-          <button mat-raised-button>Submit</button>
+          <button mat-raised-button type="submit" [disabled]="!contactAdminForm.valid" style="background-color: #4680ff; color: #ffffff">
+            Submit
+          </button>
         </form>
       </mat-card>
     </div>

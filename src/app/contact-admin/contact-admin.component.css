@@ -1,3 +1,6 @@
+.contentpart {
+    margin-top: 1%;
+}
 mat-card {
     width: auto;
     margin: 0% 15% 2% 20%;

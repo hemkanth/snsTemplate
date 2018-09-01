@@ -3,6 +3,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { ProfileModalComponent } from '../Modals/profile-modal/profile-modal.component';
 import { AcademicModalComponent } from '../Modals/academic-modal/academic-modal.component';
+import { ExtraCAModalComponent } from '../Modals/extra-camodal/extra-camodal.component';
 
 @Component({
   selector: 'app-profile',
@@ -19,6 +20,10 @@ export class ProfileComponent implements OnInit {
   graduate = 'xxx';
   percentage = 'xxx';
   y_passing = 'xxx';
+
+  sports_name = 'xxx';
+  honors = 'xxx';
+
   bsModalRef: BsModalRef;
   constructor(private modalService: BsModalService) { }
 
@@ -40,6 +45,13 @@ export class ProfileComponent implements OnInit {
       this.graduate = academicForm.graduate;
       this.percentage = academicForm.percentage;
       this.y_passing = academicForm.y_passing;
+    });
+  }
+  openExtraCAUpdateModal() {
+    this.bsModalRef = this.modalService.show(ExtraCAModalComponent);
+    this.bsModalRef.content.sendData.subscribe(extraCAForm => {
+      this.sports_name = extraCAForm.sports_name;
+      this.honors = extraCAForm.honors;
     });
   }
 }

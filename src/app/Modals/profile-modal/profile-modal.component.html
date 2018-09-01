@@ -7,20 +7,52 @@
 <div class="modal-body">
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput type="date" formControlName="dob" min="1950-1-1">
+      <input matInput type="date" formControlName="dob" min="1950-1-1" placeholder="Date of birth">
+      <mat-error *ngIf="profileForm.controls['dob'].errors && !profileForm.controls['dob'].errors.pristine">
+        this field is
+        <strong>required</strong>
+      </mat-error>
     </mat-form-field>
-     &nbsp; 
+    &nbsp;
     <mat-form-field>
       <span matPrefix>+91 &nbsp;</span>
       <input matInput type="tel" formControlName="c_number" placeholder="Contact number">
+      <mat-error *ngIf="profileForm.controls['c_number'].errors && !profileForm.controls['c_number'].errors.pristine">
+        <span *ngIf="profileForm.controls['c_number'].errors.required">this field is
+          <strong>required</strong>
+        </span>
+        <span *ngIf="profileForm.controls['c_number'].errors.pattern">contact number should be in
+          <strong>numbers</strong>
+        </span>
+        <span *ngIf="!profileForm.controls['c_number'].errors.minLength || !profileForm.controls['c_number'].errors.maxLength">
+          contact number should be
+          <strong>10 digits</strong>
+        </span>
+      </mat-error>
     </mat-form-field>
     <mat-form-field>
       <span matPrefix>+91 &nbsp;</span>
-      <input matInput type="tel" formControlName="p_number" placeholder="Contact number"> 
+      <input matInput type="tel" formControlName="p_number" placeholder="Parent's contact number">
+      <mat-error *ngIf="profileForm.controls['p_number'].errors && !profileForm.controls['p_number'].errors.pristine">
+        <span *ngIf="profileForm.controls['p_number'].errors.required">this field is
+          <strong>required</strong>
+        </span>
+        <span *ngIf="profileForm.controls['p_number'].errors.pattern">contact number should be in
+          <strong>numbers</strong>
+        </span>
+        <span *ngIf="!profileForm.controls['p_number'].errors.minLength || !profileForm.controls['p_number'].errors.maxLength">
+          contact number should be
+          <strong>10 digits</strong>
+        </span>
+      </mat-error>
     </mat-form-field>
-     &nbsp; 
+    &nbsp;
     <mat-form-field>
-      <textarea matInput placeholder="Leave a comment" formControlName="address" placeholder="Enter your address"></textarea>
+      <textarea matInput formControlName="address" placeholder="Enter your address"></textarea>
+      <mat-error *ngIf="profileForm.controls['address'].errors && !profileForm.controls['address'].errors.pristine">
+          this field is
+          <strong>required</strong>
+        </mat-error>
     </mat-form-field>
     <br/>
     <div class="modal-footer">

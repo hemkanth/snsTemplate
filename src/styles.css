@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
 *{
     outline: none !important;
 }
@@ -8,7 +9,7 @@
     min-width: 20px !important;
 }
 body {
-    background-color: #ececec;
+    background-color: #edededed;
 }
 
 .container {
@@ -18,19 +19,36 @@ body {
 .headerpart {
     width: 100%;
     height: 25%;
-    background-color: #4680ff;
-    margin-top: 2%;
+    background-color: #2775be;
+    margin: 0% 0% 0% 0%;
+    color: #ffffff;
+    padding: 5% 0% 5% 1%;
     
 }
-.headerpart > h1 {
+.headerpart_2 {
+    width: 100%;
+    height: 25%;
+    background-color:transparent;
+    margin: 0% 0% 0% 0%;
+    color: #000000;
+    padding: 5% 0% 3% 1%;
+}
+/* .headerpart > h1 {
     margin: 0;
     padding: 5%;
-    color: #ffffff;
-}
+    color: #000000;
+} */
+/* .headerpart_2 > h1 {
+    margin: 0;
+    padding: 5%;
+    color: black;
+} */
 .cdk-overlay-container{
     z-index: 1054;
 }
-
+mat-card {
+    box-shadow: none !important;
+}
 @media screen and (max-width: 400px) {
     .contentPart {
         padding-top: 35%;

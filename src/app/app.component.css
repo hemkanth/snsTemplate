@@ -1,11 +1,28 @@
 /* top navigation bar style */
 .navbar {
-    background-color: #4680ff;
+    background-color: #2775be;
     color: #ffffff;
     height: auto;
 }
-.navbar .navbar-header .navbar-brand img {
+.navbar-brand {
+    padding-top: 10px;
+}
+.Initial {
     height: 40px;
+}
+.Transform {
+    height: 40px;;
+}
+.imgInitial {
+    height: 40px;
+    width: 66px;
+    transition: width 0.5s, height 0.5s;
+}
+.imgTransform {
+    height: 45px;
+    width: 76px;
+    transition: width 0.5s, height 0.5s;
+
 }
 .navbar form {
     display: flex;
@@ -26,6 +43,20 @@
 }
 .navbar .iconbuttons .mat-icon-button {
     margin-top: 3%;
+}
+#menuButton {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.menuButtonInitial {
+    margin-left: initial;
+    transform: rotate(initial);
+    transition: margin-left 0.5s, transform 1s;
+}
+.menuButtonTransform {
+    margin-left: 55px;
+    transform: rotate(360deg);
+    transition: margin-left 0.5s, transform 1s;
 
 }
 /* top navigation bar style ends */
@@ -44,6 +75,9 @@
     transition: 0.5s;
     /* padding-top: 60px; */
 }
+.sideNavContent {
+    height: 100%;
+}
 
 #content {
     transition: margin-left 0.5s;
@@ -51,7 +85,7 @@
 }
 
 #sideNav.showSideNav {
-    width: 250px;
+    width: 200px;
     transition: 0.5s;
 
 }
@@ -63,7 +97,7 @@
 }
 
 #content.showSideNav {
-    margin-left: 250px;
+    margin-left: 200px;
     transition: 0.5s;
 
 }
@@ -98,7 +132,9 @@
 /* sideve navigation styel ends */
 
 /* matcard style */
-
+mat-card {
+    text-align: center;
+}
 mat-card-header {
     text-align: center;
 }
@@ -118,9 +154,11 @@ mat-card-actions > a > button{
     margin-left: 0;
     margin-top: 5%;
 }
-
+mat-card-actions > a > button:hover {
+    width: 100%;
+}
 mat-card-actions > a.active > button {
-    background-color: #4680ff;
+    background-color: #2775be;
     color: #ffffff;
 }
 /* mat-card style ends */
@@ -154,9 +192,13 @@ mat-card-actions > a.active > button {
         transition: 0.5s;
     
     }
+    /* #sideNav.hideSideNav > .sideNavContent button:hover + span {
+        display: block;
+
+    } */
     #sideNav.hideSideNav > .sideNavContent mat-card-header img {
         width: 50px;
-        margin-left: -20px;
+        margin-left: -17px;
         transition: 0.5s;
     }
 }

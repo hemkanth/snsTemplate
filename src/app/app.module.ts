@@ -16,7 +16,6 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ModalModule } from 'ngx-bootstrap';
-import { DatepickerModule } from 'ngx-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +29,7 @@ import { ContactAdminComponent } from './contact-admin/contact-admin.component';
 import { ActivityModalComponent } from './Modals/activity-modal/activity-modal.component';
 import { ProfileModalComponent } from './Modals/profile-modal/profile-modal.component';
 import { AcademicModalComponent } from './Modals/academic-modal/academic-modal.component';
+import { ExtraCAModalComponent } from './Modals/extra-camodal/extra-camodal.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { AcademicModalComponent } from './Modals/academic-modal/academic-modal.c
     ContactAdminComponent,
     ActivityModalComponent,
     ProfileModalComponent,
-    AcademicModalComponent
+    AcademicModalComponent,
+    ExtraCAModalComponent
   ],
   imports: [
     BrowserModule,
@@ -62,10 +63,11 @@ import { AcademicModalComponent } from './Modals/academic-modal/academic-modal.c
     MatNativeDateModule,
     MatSelectModule,
     ModalModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ProfileModalComponent, AcademicModalComponent]
+  entryComponents: [ProfileModalComponent, AcademicModalComponent, ExtraCAModalComponent]
 })
 export class AppModule {}

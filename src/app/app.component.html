@@ -5,10 +5,12 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="" class="navbar-brand">
-        <img src="../assets/sns_institute_logo.png" alt="logo">
+        <img src="../assets/sns_institute_logo.png" alt="logo" [ngClass]="{'imgInitial' : !status, 'imgTransform' : status}">
       </a>
-      <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="!status" then style="display: block">
-        <i class="fas fa-bars"></i>
+      <button id="menuButton" mat-button (click)="clickEvent()" [ngClass]="{'menuButtonInitial' : !status, 'menuButtonTransform' : status}">
+        <span *ngIf=status then style="display: block;"><i class="fas fa-arrow-left"></i></span>
+        <span *ngIf=!status then style="display: block;"><i class="fas fa-bars"></i></span>
+        <!-- <span *ngIf="status" ><i class="fas fa-times"></i></span> -->
       </button>
     </div>
     <div class="iconbuttons">
@@ -50,13 +52,16 @@
 </nav>
 <!-- side navigation bar -->
 <div id="sideNav" class="sidenav" [ngClass]="status ? 'showSideNav' : 'hideSideNav'">
-  <div class="sideNavContent">
+  <div class="sideNavContent" style="background-color: #ffffff;">
+    <!-- <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="status" then style="display: block; margin-left: 85%;">
+          <i class="fas fa-times"></i>
+        </button> -->
     <mat-card>
 
       <mat-card-header>
-        <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="status" then style="display: block">
+        <!-- <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="status" then style="display: block">
           <i class="fas fa-times"></i>
-        </button>
+        </button> -->
         <mat-card-title>
           <img class="avatar" src="../../assets/avatar.png" alt="avatar">
           <br/>
